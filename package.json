@@ -5,17 +5,22 @@
   "scripts": {
     "start": "node index.js",
     "dev": "nodemon index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:ui": "rm -rf dist && cd ../frontend && npm run build &&cp -r dist ../backend",
+    "deploy:full": "npm run build:ui && git add . && git commit -muibuild && git push"
   },
   "author": "triomphe",
   "license": "ISC",
   "description": "",
   "dependencies": {
     "cors": "^2.8.5",
+    "dotenv": "^17.2.1",
     "express": "^5.1.0",
     "http": "^0.0.1-security",
+    "mongoose": "^8.18.0",
     "morgan": "^1.10.1",
-    "statuscode": "^0.0.0"
+    "statuscode": "^0.0.0",
+    "watch": "^1.0.2"
   },
   "devDependencies": {
     "nodemon": "^3.1.10"
