@@ -47,8 +47,6 @@ next(error)
 
 }
 
-// this must be the last middleware loaded, and all routes must be registered before it!
-
 
 const generateId = () => {
   const maxId = notes.length > 0
@@ -67,6 +65,7 @@ if (!body.content) {
 const note = new Note({
 content: body.content,
 important: body.important || false,
+id: generateId(),
 })
 
 note.save().then(savedNote => {
