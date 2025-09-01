@@ -1,6 +1,7 @@
 require('dotenv').config()
 const express = require('express')
 const morgan = require('morgan')
+const cors = require('cors')
 const Note = require('./models/note')
 
 const app = express()
@@ -44,6 +45,8 @@ next(error)
 
 }
 
+// this must be the last middleware loaded, and all routes must be registered before it!
+
 
 const generateId = () => {
   const maxId = notes.length > 0
@@ -62,7 +65,6 @@ if (!body.content) {
 const note = new Note({
 content: body.content,
 important: body.important || false,
-id: generateId(),
 })
 
 note.save().then(savedNote => {
