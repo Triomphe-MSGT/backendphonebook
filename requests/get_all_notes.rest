@@ -1,19 +1,1 @@
 GET http://localhost:3001/api/notes
-
-###
-POST  http://localhost:3001/api/notes
-Content-Type:application/json
-
-{
-  "content": "python is good stacki",
-  "important": true
-}
-
-###
-PUT http://localhost:3001/api/notes/68ad91d899511a2be3fb9844
-Content-Type:application/json
-
-{
-  "content": "java is good stacking",
-  "important": true
-}

@@ -1,0 +1,24 @@
+
+GET http://localhost:3001/api/users
+
+
+###
+POST http://localhost:3001/api/users
+content-type: application/json
+
+{
+"username": "triomphe mandeng",
+"name": "User-Agent: ",
+"password": "1234"
+
+}
+
+###
+POST http://localhost:3001/api/login
+content-type: application/json
+
+{
+"username": "triomphe mandeng",
+"password": "1234"
+
+}

@@ -1,0 +1,10 @@
+POST http://localhost:3001/api/notes
+content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InRyaW9tcGhlIG1hbmRlbmciLCJpZCI6IjY4YzE3MDAwMmFiYzBmNDkzZGYwZTA0ZCIsImlhdCI6MTc1NzUyNjUyNSwiZXhwIjoxNzU3NTMwMTI1fQ.ChX2HvSrBjGq1Vj3uVd0Yo0xR_uZbUpYarW3sOD3Jfo
+
+{
+ "content": "Afrobeat is the best music in the world",
+ "important": "true",
+ "userId": "68bf4fcb28792d946c4da1eb"
+ }
+

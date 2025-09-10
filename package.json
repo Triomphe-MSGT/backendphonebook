@@ -3,26 +3,36 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
-    "dev": "nodemon index.js",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "cross-env NODE_ENV=production node index.js",
+    "dev": "cross-env NODE_ENV=development node --watch index.js",
+    "test": "cross-env NODE_ENV=test node --test",
+    "test:only": "cross-env NODE_ENV=test node --test --test-only",
     "build:ui": "rm -rf dist && cd ../frontend && npm run build &&cp -r dist ../backend",
-    "deploy:full": "npm run build:ui && git add . && git commit -muibuild && git push"
+    "deploy:full": "npm run build:ui && git add . && git commit -muibuild && git push",
+    "lint": "eslint ."
   },
   "author": "triomphe",
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "bcrypt": "^6.0.0",
     "cors": "^2.8.5",
+    "cross-env": "^10.0.0",
     "dotenv": "^17.2.1",
     "express": "^5.1.0",
     "http": "^0.0.1-security",
+    "jsonwebtoken": "^9.0.2",
     "mongoose": "^8.18.0",
     "morgan": "^1.10.1",
     "statuscode": "^0.0.0",
     "watch": "^1.0.2"
   },
   "devDependencies": {
-    "nodemon": "^3.1.10"
+    "@eslint/js": "^9.34.0",
+    "@stylistic/eslint-plugin-js": "^4.4.1",
+    "eslint": "^9.34.0",
+    "globals": "^16.3.0",
+    "nodemon": "^3.1.10",
+    "supertest": "^7.1.4"
   }
 }
